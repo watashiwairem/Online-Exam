@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Exam</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="tamami">
+      <div class="sorular-tablo">  <!--Sağ üstteki tablo içeriği-->
+        <br>
+        <br>
+          <div id="sure_id" class="sure-container">
+            <h3>&nbsp &nbsp Süre: &nbsp;</h3> 
+            <div class="dakika-cerceve">
+              <span id="dakika_id" class="dakika-sure">00</span>
+            </div>
+            <div class="saniye-cerceve">
+              <span id="saniye_id" class="saniye-sure">00</span>
+            </div>
+          </div>
+          <div style="display: flex;">
+            <h3>&nbsp &nbsp Puan: &nbsp</h3>
+            <h3 id="point"></h3>
+          </div>
+          <h3>&nbsp &nbsp Sınav Gezintisi</h3>
+          <div class="sorular-tablo-buttons">
+            <div id="button-container">
+              <!-- <button id="soru1" class="sorular-button">1</button> -->
+            </div>
+          </div>
+          <br>
+          &nbsp &nbsp <button id="bitirBtn" onclick="uygulamayiBitir()">Uygulamayı Bitir</button>
+          
+          <br>
+          <br> 
+      </div>
+  
+  <br>
+  <br>
+  <div class="soru-secmeli-blok">
+      <div class="soru-baslik">
+        <span class="soru-numarasi" id="soru-num-int">1</span>
+        <span id="soru"></span> <br />
+      </div>
+      <div class="secenekler" id="secenek-id">
+        <div class="herSecenek">
+          <input type="radio" name="secenekismi" value="a" id="radio1" />
+          <p class="cevap-class" id="secenek1">A &nbsp Option A</p>
+        </div>
+        <br />
+        <div class="herSecenek">
+          <input type="radio" name="secenekismi" value="b" id="radio2" />
+          <p class="cevap-class" id="secenek2">B &nbsp Option B</p>
+        </div>
+        <br />
+        <div class="herSecenek">
+          <input type="radio" name="secenekismi" value="c" id="radio3" />
+          <p class="cevap-class" id="secenek3">C &nbsp Option C</p>
+        </div>
+        <br />
+        <div class="herSecenek">
+          <input type="radio" name="secenekismi" value="d" id="radio4" />
+          <p class="cevap-class" id="secenek4">D &nbsp Option D</p>
+        </div>
+        <br />
+        <div class="herSecenek">
+          <input type="radio" name="secenekismi" value="e" id="radio5" />
+          <p class="cevap-class" id="secenek5">E &nbsp Option E</p>
+        </div>
+      </div>
+    </div>
+    <div class="ileri-geri-buttonlar">
+      <div id="geri-button">
+        <button onclick="backQuestion()"> < Önceki Soru</button>
+      </div>
+      <div id="ileri-button">
+        <button onclick="nextQuestion()">Sonraki Soru ></button>
+      </div>
+    </div>
+<div class="container">
+<!----------------------------------------SORU EKLEME---------------------------------------------->
+<div class="soru-ekleme-cikarma">
+  <p class="basliklar">~Soru Ekleme Bölümü~</p>
+  <div>
+    <label class="labelText mb-4">Sorunuzu Yazınız</label>
+    <input type="text" id="inputQuestion" maxlength="100" />
+  </div>
+  <div>
+    <label class="labelText">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp A-</label>
+    <input type="text" id="inputA" maxlength="100" />
+  </div>
+  <div>
+    <label class="labelText">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp B-</label>
+    <input type="text" id="inputB" maxlength="100" />
+  </div>
+  <div>
+    <label class="labelText">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp C-</label>
+    <input type="text" id="inputC" maxlength="100" />
+  </div>
+  <div>
+    <label class="labelText">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp D-</label>
+    <input type="text" id="inputD" maxlength="100" />
+  </div>
+  <div>
+    <label class="labelText">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp E-</label>
+    <input type="text" id="inputE" maxlength="100" />
+  </div>
+  <div>
+    <label class="labelText">&nbsp &nbsp Doğru Cevap :</label>
+    <input type="text" id="dogruCevap" maxlength="1" />
+  </div>
+  <br>
+  <div class="eklemeButton">
+    <button onclick="soruEkleme()">Soruyu Kaydet</button>
+  </div>
+</div>
+
+<!-----------------------------------------------SORU EKLEME BİTİŞ------------------------------------------------>
+
+<!------------------------------------------------SORU ÇIKARMA BAŞLANGIÇ------------------------------------------>
+<div class="soruCikar">
+  <p class="basliklar">~Soru Çıkarma Bölümü~</p>
+  <label class="labelText mt-5">Lütfen Çıkarmak İstediğiniz Soru Numarasını Giriniz: </label>
+  <input type="number" id="SoruCikarma" name="tentacles" min="1" />
+  <div class="cikarmaButton">
+    <br>
+    <button onclick="soruCikarma()">Çıkart</button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!------------------------------------------------SORU ÇIKARMA BİTİŞ---------------------------------------------->
+<script src="script.js"></script>
+</body>
+</html>
